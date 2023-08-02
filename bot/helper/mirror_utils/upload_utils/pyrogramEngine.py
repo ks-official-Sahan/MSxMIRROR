@@ -92,7 +92,6 @@ class TgUploader:
                 cap_mono= cap_mono.replace('indexlink',get_url)
         except Exception as err:
         	print(f'Error On Line No:89 Indexlink Erroe {err}')
-              pass
         fsize = ospath.getsize(up_path)
         user_id_ = self.__listener.message.from_user.id
 
