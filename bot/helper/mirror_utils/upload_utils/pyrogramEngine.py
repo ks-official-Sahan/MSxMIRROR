@@ -97,7 +97,7 @@ class TgUploader:
                 print(get_url)
                 cap_mono= cap_mono.replace('indexlink',get_url)
         except Exception as err:
-        	print(f'Error On Line No:89 Indexlink Erroe {err}')
+        	print(f'Error On Line No:95Indexlink Erroe {err}')
 
         dumpid = user_data[user_id_].get('userlog') if user_id_ in user_data and user_data[user_id_].get('userlog') else ''
         LEECH_X = int(dumpid) if len(dumpid) != 0 else user_data.get('is_log_leech', [''])[0]
