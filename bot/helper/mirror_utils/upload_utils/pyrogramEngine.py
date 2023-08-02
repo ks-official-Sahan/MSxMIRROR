@@ -78,6 +78,11 @@ class TgUploader:
         self.__listener.onUploadComplete(None, size, self.__msgs_dict, self.__total_files, self.__corrupted, self.name)
 
     def __upload_file(self, up_path, file_, dirpath):
+        fsize = ospath.getsize(up_path)
+        user_id_ = self.__listener.message.from_user.id
+
+        client = premium_session if fsize > 2097152000 else app
+        up_path, file_, cap_mono = change_filename(file_, user_id_, dirpath, up_path)
         try:
             link = self.__listener.link
             if '0:/' in link or '1:/' in link or '2:/' in link or '3:/' in link or '4:/' in link or '5:/' in link or '6:/' in link or "workers.dev" in link:
@@ -93,11 +98,6 @@ class TgUploader:
                 cap_mono= cap_mono.replace('indexlink',get_url)
         except Exception as err:
         	print(f'Error On Line No:89 Indexlink Erroe {err}')
-        fsize = ospath.getsize(up_path)
-        user_id_ = self.__listener.message.from_user.id
-
-        client = premium_session if fsize > 2097152000 else app
-        up_path, file_, cap_mono = change_filename(file_, user_id_, dirpath, up_path)
 
         dumpid = user_data[user_id_].get('userlog') if user_id_ in user_data and user_data[user_id_].get('userlog') else ''
         LEECH_X = int(dumpid) if len(dumpid) != 0 else user_data.get('is_log_leech', [''])[0]
