@@ -592,12 +592,12 @@ def change_filename(file_, user_id_, dirpath=None, up_path=None, all_edit=True, 
     cap_mono = ""
     cfont = config_dict['CAPTION_FONT'] if not FSTYLE else FSTYLE
     if CAPTION and all_edit:
-        CAPTION = CAPTION.replace('\|', '%%').replace('\s', ' ').replace('PREFIX','').replace('HEVC','#HEVC').replace('.mkv','').replace('.mp4','')
+        CAPTION = CAPTION.replace('\|', '%%').replace('\s', ' ')
         slit = CAPTION.split("|")
         cap_mono = slit[0].format(
             filename = file_,
             size = get_readable_file_size(ospath.getsize(up_path))
-        )
+        ).replace('PREFIX','').replace('HEVC','#HEVC').replace('.mkv','').replace('.mp4','')
         if len(slit) > 1:
             for rep in range(1, len(slit)):
                 args = slit[rep].split(":")
