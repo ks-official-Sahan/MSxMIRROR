@@ -77,28 +77,20 @@ class TgUploader:
         self.__listener.onUploadComplete(None, size, self.__msgs_dict, self.__total_files, self.__corrupted, self.name)
 
     def __upload_file(self, up_path, file_, dirpath):
-        if self.__listener.link:
-          xlink = f"{self.__listener.link}"
-          if 'xlink' in '0:/' in xlink or '1:/' in xlink or '2:/' in xlink or '3:/' in xlink or '4:/' in xlink or '5:/' in xlink or '6:/' in xlink or "workers.dev" in xlink:
-            pass
-          else:
-              xlink = None
-              
-          userid = f"{self.__listener.user_id}"
-          # Shiva
-          try:
-             shor = db.shortner(userid)
-             shor_split = shor.split(' ')
-             website = shor_split[0]
-             api = shor_split[1]
-             params = {'api': api, 'url': xlink}
-             muli= f'https://{website}/api'
-             get_url = requests.get(muli,params) 
-             get_url =  get_url.json()['shortenedUrl']
-             print(get_url)
-             cap_mono = cap_mono.replace('short',get_url)
-          except Exception as err:
-              print(f'Error On Line No:96 Indexlink Error {err}')
+        try:
+            link = self.__listener.link
+            if '0:/' in link or '1:/' in link or '2:/' in link or '3:/' in link or '4:/' in link or '5:/' in link or '6:/' in link or "workers.dev" in link:
+                user_id = self.__listener.message.from_user.id
+                user_dict = user_data.get(user_id, {})
+                api = user_dict.get('sapi', '') or ''
+                duli = user_dict.get('ssite', '') or ' '
+                
+                params = {'api': api, 'url':link}
+                get_url = requests.get(f'https://{duli}/api/',params)
+                get_url =  get_url.json()['shortenedUrl']
+                cap_mono= cap_mono.replace('indexlink',get_url)
+        except Exception as err:
+        	print(f'Error On Line No:89 Indexlink Erroe {err}')
               pass
         fsize = ospath.getsize(up_path)
         user_id_ = self.__listener.message.from_user.id
