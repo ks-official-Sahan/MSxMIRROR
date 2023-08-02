@@ -23,7 +23,9 @@ example_dict = {'prefix':'1. <code>@your_channel_username or Anything</code>',
                 'suffix':'1. <code>~ WZML</code>\n2. <code>~ @channelname</code>', 
                 'msuffix':'1. <code>~ WZML</code>\n2. <code>~ @channelname</code>', 
                 'caption': '1.'+escape("<b>{filename}</b>\nJoin Now : @WeebZone_updates")+'\nCheck all available fillings options <a href="">HERE</a> and Make Custom Caption.', 
-                'userlog':'1. <code>-100xxxxxx or Channel ID</code>', 
+                'userlog':'1. <code>-100xxxxxx or Channel ID</code>',
+                'ssite': ['Send Site Link like kpslink.in', 'Set Your Site link'],
+                'sapi': ['Send Site API ID', 'Set Your Site Api Id'],
                 'usertd':'1. <code>UserTD_Name 1TSYgS-88SkhkSuoS-KHSi7%^&s9HKj https://1.xyz.workers.dev/0:/Leecher</code>\n<b> Do not forget to add '+config_dict['SA_MAIL']+' to your TD as Content Manager</b>',
                 'remname':'<b>Syntax:</b> previousname:newname:times|previousname:newname:times\n\n1. Fork:Star|Here:Now:1|WZML\n\n<b>Output :</b> Star Now : Click Here.txt', 
                 'mremname':'<b>Syntax:</b> previousname:newname:times|previousname:newname:times\n\n1. Fork:Star|Here:Now:1|WZML\n\n<b>Output :</b> Star Now : Click Here.txt', 
@@ -37,7 +39,9 @@ fname_dict = {'prefix': 'Leech Prefix',
             'suffix':'Leech Suffix', 
             'msuffix':'Mirror Suffix', 
             'caption': 'Caption', 
-            'userlog':'UserLog', 
+            'userlog':'UserLog',
+            'ssite': 'Shortner Site Link',
+            'sapi': 'Shortner Site API',
             'usertd':'UserTD', 
             'remname':'Leech Remname', 
             'mremname':'Mirror Remname', 
@@ -182,6 +186,8 @@ def get_user_settings(from_user, key=None):
         remname = user_dict['remname'] if user_dict and user_dict.get('remname') else "Not Exists"
         cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "<b>Not Exists</b>"
         userlog = user_dict['userlog'] if user_dict and user_dict.get('userlog') else "Not Exists"
+        ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "Not Exists"
+        sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "Not Exists"
         dailytlle = get_readable_file_size(config_dict['DAILY_LEECH_LIMIT'] * 1024**3) if config_dict['DAILY_LEECH_LIMIT'] else "Unlimited"
         dailyll = get_readable_file_size(getdailytasks(user_id, check_leech=True)) if config_dict['DAILY_LEECH_LIMIT'] and user_id != OWNER_ID and not is_sudo(user_id) and not is_paid(user_id) else "Unlimited"
         lsplit = get_readable_file_size(user_dict['split_size']) if user_dict and user_dict.get('split_size') else get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)"
@@ -213,6 +219,10 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
         buttxt = "Change/Delete Remname" if remname != "Not Exists" else "Set Remname"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal remname leech")
+        buttxt = "Change/Delete ssite" if ssite != "Not Exists" else "Set Site"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
+        buttxt = "Change/Delete sapi" if sapi != "Not Exists" else "Set Api"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
         buttxt = "Change/Delete Leech Split" if lsplit != get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)" else "Set Leech Split"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal split_size leech")
         if cfont != "<b>Not Exists</b>": buttons.sbutton("Remove CapFont", f"userset {user_id} cfont")
