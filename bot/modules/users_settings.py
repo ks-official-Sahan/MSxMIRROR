@@ -220,9 +220,9 @@ def get_user_settings(from_user, key=None):
         buttxt = "Change/Delete Remname" if remname != "Not Exists" else "Set Remname"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal remname leech")
         buttxt = "Change/Delete ssite" if ssite != "Not Exists" else "Set Site"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
         buttxt = "Change/Delete sapi" if sapi != "Not Exists" else "Set Api"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
         buttxt = "Change/Delete Leech Split" if lsplit != get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)" else "Set Leech Split"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal split_size leech")
         if cfont != "<b>Not Exists</b>": buttons.sbutton("Remove CapFont", f"userset {user_id} cfont")
