@@ -239,8 +239,8 @@ def get_user_settings(from_user, key=None):
 ├ Suffix : <b>{suffix}</b>
 ├ Caption : <b>{escape(caption)}</b>
 ├ CapFont : {cfont}
-├ Site : {ssite}
-├ Api : {sapi}
+├ Site : <b>{ssite}</b>
+├ Api : <b>{sapi}</b>
 ├ Leech Split Size : <b>{lsplit}</b>
 ├ Equal Split : <b>{esplits}</b>
 ├ Daily Leech : <b>{dailyll} / {dailytlle} per day</b>
