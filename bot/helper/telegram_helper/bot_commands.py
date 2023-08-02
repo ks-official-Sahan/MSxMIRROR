@@ -36,6 +36,7 @@ class _BotCommands:
         self.CancelMirror = getCommand(f'CANCEL_COMMAND', f'cancel{CMD_SUFFIX}')
         self.CancelAllCommand = getCommand(f'CANCEL_ALL_COMMAND', f'cancelall{CMD_SUFFIX}')
         self.ListCommand = getCommand(f'LIST_COMMAND', f'list{CMD_SUFFIX}')
+        self.ShortCommand = getCommand('SHORT_COMMAND', f'short{CMD_SUFFIX}')
         self.SearchCommand = getCommand(f'SEARCH_COMMAND', f'search{CMD_SUFFIX}')
         self.StatusCommand = getCommand(f'STATUS_COMMAND', f'status{CMD_SUFFIX}')
         self.UsersCommand = getCommand(f'USERS_COMMAND', f'users{CMD_SUFFIX}')
