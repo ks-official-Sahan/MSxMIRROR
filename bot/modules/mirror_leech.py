@@ -290,7 +290,7 @@ def start_ml(extra, s_listener):
     c_index = int(extra[4])
     u_index = extra[5]
 
-    listener = MirrorLeechListener(bot, message, isZip, extract, isQbit, isLeech, pswd, tag, select, seed, c_index, u_index)
+    listener = MirrorLeechListener(bot, message, isZip, extract, isQbit, isLeech, pswd, tag, select, seed, c_index, u_index, link)
     if link == 'tg_file':
         Thread(target=TelegramDownloadHelper(listener).add_download, args=(message, f'{DOWNLOAD_DIR}{listener.uid}/', name)).start()
         return
