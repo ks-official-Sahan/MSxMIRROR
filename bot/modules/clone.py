@@ -239,7 +239,7 @@ def start_clone(listelem):
                 buttons = ButtonMaker()
                 b_uname = bot.get_me().username
                 botstart = f"http://t.me/{b_uname}"
-                buttons.buildbutton("View links in PM", f"{botstart}")
+                buttons.buildbutton("ᴠɪᴇᴡ ʟɪɴᴋs ɪɴ ᴘᴍ", f"{botstart}")
                 if config_dict['PICS']:
                     sendPhoto(msg + botpm, bot, message, rchoice(config_dict['PICS']), buttons.build_menu(2))
                 else:
