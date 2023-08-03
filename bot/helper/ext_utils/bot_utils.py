@@ -252,11 +252,11 @@ def get_readable_message():
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(list(download_dict.values())[int(COUNT):], start=1):
             #msg += f"<b><a href='{download.message.link}'>{download.status()}</a>: </b>"
-            msg += f"✓ ғɪʟᴇ ɴᴀᴍᴇ<code>{escape(str(download.name()))}</code>\n"
+            msg += f"<b>✓ ғɪʟᴇ ɴᴀᴍᴇ</b> : <code>{escape(str(download.name()))}</code>\n"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_CONVERTING, MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
                 if config_dict['EMOJI_THEME']:
                     msg += f"\n<b></b>{get_progress_bar_string(download)} {download.progress()}"
-                    msg += f"\n<b>sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a>: </b>"
+                    msg += f"\n<b>sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
                     msg += f"\n<b>ᴅᴏɴᴇ :</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                     msg += f"\n<b>sᴘᴇᴇᴅ :</b> {download.speed()}"
                     msg += f"\n<b>ᴇᴛᴀ :</b> {download.eta()}"
@@ -265,7 +265,7 @@ def get_readable_message():
                     
                 else:
                     msg += f"\n<b></b>{get_progress_bar_string(download)} {download.progress()}"
-                    msg += f"\n<b>sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a>: </b>"
+                    msg += f"\n<b>sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
                     msg += f"\n<b>ᴅᴏɴᴇ :</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                     msg += f"\n<b>sᴘᴇᴇᴅ :</b> {download.speed()}"
                     msg += f"\n<b>ᴇᴛᴀ :</b> {download.eta()}"
@@ -357,7 +357,7 @@ def get_readable_message():
         if config_dict['TOTAL_TASKS_LIMIT']:
             TASKS_COUNT = f"<b>Task Limit: </b>{config_dict['TOTAL_TASKS_LIMIT']} | <b>Run:</b> {len(download_dict)} | <b>Free:</b> {config_dict['TOTAL_TASKS_LIMIT'] - len(download_dict)}\n"
         else:
-            TASKS_COUNT = f"<b><u>ᴛᴀsᴋs ʀᴜɴɴɪɴɢ -</u></b> {len(download_dict)}\n\n"
+            TASKS_COUNT = f"<b><u>ᴛᴀsᴋs ʀᴜɴɴɪɴɢ -</u></b> {len(download_dict)}\n"
         if config_dict['EMOJI_THEME']:
             bmsg = f"{TASKS_COUNT}"
             bmsg += f"<b>ᴄᴘᴜ :</b> {cpu_percent()}% | <b>ғʀᴇᴇ :</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
