@@ -232,10 +232,10 @@ def start_clone(listelem):
         if BOT_PM_X:
             if message.chat.type != 'private':
                 if config_dict['EMOJI_THEME']:
-                    msg = f"<b>🗂️ Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+                    msg = f"<b>📂 ғɪʟᴇ ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
                 else:
-                    msg = f"<b>Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-                botpm = f"\n<b>Hey {tag}. I have sent your cloned links in PM.</b>\n"
+                    msg = f"<b>📂 ғɪʟᴇ ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+                botpm = f"\n<b>🥀 ʜᴇʏ {tag}. ɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ʏᴏᴜʀ ᴄʟᴏɴᴇᴅ ʟɪɴᴋꜱ ɪɴ ᴘᴍ.</b>\n"
                 buttons = ButtonMaker()
                 b_uname = bot.get_me().username
                 botstart = f"http://t.me/{b_uname}"
@@ -246,9 +246,9 @@ def start_clone(listelem):
                     sendMessage(msg + botpm, bot, message, buttons.build_menu(2))
             else:
                 if config_dict['EMOJI_THEME']:
-                    cc = f'\n<b>👤 Clone By: </b>{tag}\n\n'
+                    cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
                 else:
-                    cc = f'\n<b>Clone By: </b>{tag}\n\n'
+                    cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
                 if config_dict['PICS']:
                     sendPhoto(result + cc, bot, message, rchoice(config_dict['PICS']), button)
                 else:
@@ -278,23 +278,23 @@ def start_clone(listelem):
                 if BOT_PM_X:
                     if message.chat.type != 'private':
                         if config_dict['EMOJI_THEME']:
-                            msg = f"<b>🗂️ Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+                            msg = f"<b>📂 ғɪʟᴇ ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
                         else:
-                            msg = f"<b>Name: </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-                        botpm = f"\n<b>Hey {tag}. I have sent your cloned links in PM.</b>\n"
+                            msg = f"<b>📂 ғɪʟᴇ ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+                        botpm = f"\n<b>🥀 ʜᴇʏ {tag}. ɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ʏᴏᴜʀ ᴄʟᴏɴᴇᴅ ʟɪɴᴋꜱ ɪɴ ᴘᴍ.</b>\n"
                         buttons = ButtonMaker()
                         b_uname = bot.get_me().username
                         botstart = f"http://t.me/{b_uname}"
-                        buttons.buildbutton("View links in PM", f"{botstart}")
+                        buttons.buildbutton("ᴠɪᴇᴡ ʟɪɴᴋs ɪɴ ᴘᴍ", f"{botstart}")
                         if config_dict['PICS']:
                             sendPhoto(msg + botpm, bot, message, rchoice(config_dict['PICS']), buttons.build_menu(2))
                         else:
                             sendMessage(msg + botpm, bot, message, buttons.build_menu(2))
                     else:
                         if config_dict['EMOJI_THEME']:
-                            cc = f'\n<b>👤 Clone By: </b>{tag}\n\n'
+                            cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
                         else:
-                            cc = f'\n<b>Clone By: </b>{tag}\n\n'
+                            cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
                         if config_dict['PICS']:
                             sendPhoto(result + cc, bot, message, rchoice(config_dict['PICS']), button)
                         else:
@@ -312,13 +312,13 @@ def start_clone(listelem):
     user_id = message.from_user.id
     tag = f"@{message.from_user.username}"
     if config_dict['EMOJI_THEME']:
-        slmsg = f"🗂️ Name: <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-        slmsg += f"📐 Size: {get_readable_file_size(size)}\n"
-        slmsg += f"👥 Added by: {tag} | <code>{user_id}</code>\n\n"
+        slmsg = f"ғɪʟᴇ ɴᴀᴍᴇ : <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+        slmsg += f"ғɪʟᴇ sɪᴢᴇ : {get_readable_file_size(size)}\n"
+        slmsg += f"ᴀᴅᴅᴇᴅ ʙʏ : {tag} | <code>{user_id}</code>\n\n"
     else:
-        slmsg = f"Name: <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-        slmsg += f"Size: {get_readable_file_size(size)}\n"
-        slmsg += f"Added by: {tag} | <code>{user_id}</code>\n\n"
+        slmsg = f"ғɪʟᴇ ɴᴀᴍᴇ : <{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
+        slmsg += f"ғɪʟᴇ sɪᴢᴇ : {get_readable_file_size(size)}\n"
+        slmsg += f"ᴀᴅᴅᴇᴅ ʙʏ : {tag} | <code>{user_id}</code>\n\n"
     if 'link_logs' in user_data:
         try:
             upper = f"‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒\n"
@@ -341,18 +341,18 @@ def start_clone(listelem):
                 pass  
 
     if config_dict['EMOJI_THEME']:
-        cc = f'\n<b>👤 Clone By: </b>{tag}\n\n'
+        cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
     else:
-        cc = f'\n<b>Clone By: </b>{tag}\n\n'
+        cc = f'\n<b>ᴄʟᴏɴᴇ ʙʏ : </b>{tag}\n\n'
     if button.build_menu(2) in ["cancelled", ""]:
         sendMessage(f"{tag} {result}", bot, message)
     else:
-        LOGGER.info(f'Cloning Done: {name}')
+        LOGGER.info(f'✓ ᴄʟᴏɴɪɴɢ ᴅᴏɴᴇ: {name}')
     if BOT_PM_X and message.chat.type != 'private':
         if config_dict['EMOJI_THEME']:
-            pmwarn = f"<b>📩 I have sent files in PM.</b>\n"
+            pmwarn = f"<b>🥀 ɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ғɪʟᴇꜱ ɪɴ ᴘᴍ.</b>\n"
         else:
-            pmwarn = f"<b>I have sent files in PM.</b>\n"
+            pmwarn = f"<b>🥀 ɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ғɪʟᴇꜱ ɪɴ ᴘᴍ.</b>\n"
     else:
         pmwarn = ''
     if 'mirror_logs' in user_data and message.chat.type != 'private':
