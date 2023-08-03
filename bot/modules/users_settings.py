@@ -80,9 +80,9 @@ def get_user_settings(from_user, key=None):
             lastused = f"{t[0]}h {t[1]}m {t[2].split('.')[0]}s ago"
         else: lastused = "Bot Not Used"
 
-        buttxt = "Change/Delete YT-DLP Quality" if ytq != "Not Exists" else "Set YT-DLP Quality"
+        buttxt = "ᴄʜᴀɴɢᴇ ʏᴛ-ᴅʟᴘ" if ytq != "Not Exists" else "sᴇᴛ ʏᴛ-ᴅʟᴘ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal yt_ql universal")
-        buttxt = "Change/Delete List Type" if ulist != f'{config_dict["LIST_MODE"].lower().capitalize()} (Default)' else "Set List Type"
+        buttxt = "ᴄʜᴀɴɢᴇ ʟɪsᴛ" if ulist != f'{config_dict["LIST_MODE"].lower().capitalize()} (Default)' else "sᴇᴛ ʟɪsᴛ"
         buttons.sbutton(buttxt, f"userset {user_id} setulist universal")
 
         if not config_dict['FORCE_BOT_PM']:
@@ -99,32 +99,32 @@ def get_user_settings(from_user, key=None):
         imdbval, anival = '', ''
         if imdb != "Not Exists":
             imdbval = "Exists"
-            buttons.sbutton("Change/Delete IMDB", f"userset {user_id} suniversal imdb_temp universal")
-            buttons.sbutton("Show IMDB Template", f"userset {user_id} showimdb")
+            buttons.sbutton("ᴄʜᴀɴɢᴇ ɪᴍᴅʙ", f"userset {user_id} suniversal imdb_temp universal")
+            buttons.sbutton("sʜᴏᴡ ɪᴍᴅʙ", f"userset {user_id} showimdb")
         else: buttons.sbutton("Set IMDB", f"userset {user_id} suniversal imdb_temp universal")
         if anilist != "Not Exists":
             anival = "Exists"
-            buttons.sbutton("Change/Delete AniList", f"userset {user_id} suniversal ani_temp universal")
-            buttons.sbutton("Show AniList Template", f"userset {user_id} showanilist")
+            buttons.sbutton("ᴄʜᴀɴɢᴇ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} suniversal ani_temp universal")
+            buttons.sbutton("sʜᴏᴡ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} showanilist")
         else:
-            buttons.sbutton("Set AniList", f"userset {user_id} suniversal ani_temp universal")
-        buttons.sbutton("Back", f"userset {user_id} mback", 'footer')
-        buttons.sbutton("Close", f"userset {user_id} close", 'footer')
+            buttons.sbutton("sᴇᴛ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} suniversal ani_temp universal")
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         button = buttons.build_menu(2)
-        text = f'''<u>Universal Settings for <a href='tg://user?id={user_id}'>{name}</a></u>
+        text = f'''<u>🥀 ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs ғᴏʀ 📌<a href='tg://user?id={user_id}'>{name}</a></u>
 
-╭ YT-DLP Quality : <b>{escape(ytq)}</b>
-├ Daily Tasks : <b>{dailytas} / {dailytl} per day</b>
-├ Last Bot Used : <b>{lastused}</b>
-├ User Bot PM : <b>{ubotpm}</b>
-├ List Type : <b>{ulist}</b>
-├ IMDB : <b>{imdbval if imdbval else imdb}</b>
-├ AniList : <b>{anival if anival else anilist}</b>
+<b>ʏᴛ-ᴅʟᴘ ǫᴜᴀʟɪᴛʏ</b> : <code>{escape(ytq)}</code>
+<b>ᴅᴀɪʟʏ ᴛᴀsᴋs</b> : <code>{dailytas} / {dailytl} per day</code>
+<b>ʟᴀsᴛ ʙᴏᴛ ᴜsᴇᴅ</b> : <code>{lastused}</code>
+<b>ᴜsᴇʀ ʙᴏᴛ ᴘᴍ</b> : <code>{ubotpm}</code>
+<b>ʟɪsᴛ ᴛʏᴘᴇ</b> : <code>{ulist}</code>
+<b>ɪᴍᴅʙ</b> : <code>{imdbval if imdbval else imdb}</code>
+<b>ᴀɴɪʟɪsᴛ</b> : <code>{anival if anival else anilist}</code>
 '''
     elif key == 'mirror':
-        prefix = user_dict['mprefix'] if user_dict and user_dict.get('mprefix') else "Not Exists"
-        suffix = user_dict['msuffix'] if user_dict and user_dict.get('msuffix') else "Not Exists"
-        remname = user_dict['mremname'] if user_dict and user_dict.get('mremname') else "Not Exists"
+        prefix = user_dict['mprefix'] if user_dict and user_dict.get('mprefix') else "ɴᴏᴛ ᴇxɪsᴛs"
+        suffix = user_dict['msuffix'] if user_dict and user_dict.get('msuffix') else "ɴᴏᴛ ᴇxɪsᴛs"
+        remname = user_dict['mremname'] if user_dict and user_dict.get('mremname') else "ɴᴏᴛ ᴇxɪsᴛs"
         if user_dict and user_dict.get('usertd'):
             usertd = user_dict['usertd']
             GDrive, _, _ = getUserTDs(user_id, force=True)
@@ -132,11 +132,11 @@ def get_user_settings(from_user, key=None):
         dailytlup = get_readable_file_size(config_dict['DAILY_MIRROR_LIMIT'] * 1024**3) if config_dict['DAILY_MIRROR_LIMIT'] else "Unlimited"
         dailyup = get_readable_file_size(getdailytasks(user_id, check_mirror=True)) if config_dict['DAILY_MIRROR_LIMIT'] and user_id != OWNER_ID and not is_sudo(user_id) and not is_paid(user_id) else "Unlimited"
 
-        buttxt = "Change/Delete Prefix" if prefix != "Not Exists" else "Set Prefix"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴘʀᴇғɪx" if prefix != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴘʀᴇғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal mprefix mirror")
-        buttxt = "Change/Delete Suffix" if suffix != "Not Exists" else "Set Suffix"
+        buttxt = "ᴄʜᴀɴɢᴇ sᴜғғɪx" if suffix != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ sᴜғғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal msuffix mirror")
-        buttxt = "Change/Delete Remname" if remname != "Not Exists" else "Set Remname"
+        buttxt = "ᴄʜᴀɴɢᴇ ʀᴇᴍɴᴀᴍᴇ" if remname != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ʀᴇᴍɴᴀᴍᴇ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal mremname mirror")
         
         if config_dict['ENABLE_USR_TD']:
