@@ -61,10 +61,10 @@ def get_user_settings(from_user, key=None):
         update_user_ldata(user_id, 'ubot_pm', config_dict['BOT_PM'])
     uplan = "Paid User" if is_paid(user_id) else "Normal User"
     if key is None:
-        buttons.sbutton("Universal Settings", f"userset {user_id} universal")
-        buttons.sbutton("Mirror Settings", f"userset {user_id} mirror")
-        buttons.sbutton("Leech Settings", f"userset {user_id} leech")
-        buttons.sbutton("Close", f"userset {user_id} close")
+        buttons.sbutton("ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs", f"userset {user_id} universal")
+        buttons.sbutton("ᴍɪʀʀᴏʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
+        buttons.sbutton("ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
+        buttons.sbutton("✘ ᴄʟᴏsᴇ ✘", f"userset {user_id} close")
         text = "User Settings:"
         button = buttons.build_menu(1)
     elif key == 'universal':
