@@ -180,14 +180,14 @@ def get_user_settings(from_user, key=None):
 <b>ʀᴇᴍɴᴀᴍᴇ</b> : <code>{escape(remname)}</code>
 '''
     elif key == 'leech':
-        prefix = user_dict['prefix'] if user_dict and user_dict.get('prefix') else "Not Exists"
-        suffix = user_dict['suffix'] if user_dict and user_dict.get('suffix') else "Not Exists"
-        caption = user_dict['caption'] if user_dict and user_dict.get('caption') else "Not Exists"
-        remname = user_dict['remname'] if user_dict and user_dict.get('remname') else "Not Exists"
-        cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "<b>Not Exists</b>"
-        userlog = user_dict['userlog'] if user_dict and user_dict.get('userlog') else "Not Exists"
-        ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "Not Exists"
-        sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "Not Exists"
+        prefix = user_dict['prefix'] if user_dict and user_dict.get('prefix') else "ɴᴏᴛ ᴇxɪsᴛs"
+        suffix = user_dict['suffix'] if user_dict and user_dict.get('suffix') else "ɴᴏᴛ ᴇxɪsᴛs"
+        caption = user_dict['caption'] if user_dict and user_dict.get('caption') else "ɴᴏᴛ ᴇxɪsᴛs"
+        remname = user_dict['remname'] if user_dict and user_dict.get('remname') else "ɴᴏᴛ ᴇxɪsᴛs"
+        cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "ɴᴏᴛ ᴇxɪsᴛs"
+        userlog = user_dict['userlog'] if user_dict and user_dict.get('userlog') else "ɴᴏᴛ ᴇxɪsᴛs"
+        ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "ɴᴏᴛ ᴇxɪsᴛs"
+        sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "ɴᴏᴛ ᴇxɪsᴛs"
         dailytlle = get_readable_file_size(config_dict['DAILY_LEECH_LIMIT'] * 1024**3) if config_dict['DAILY_LEECH_LIMIT'] else "Unlimited"
         dailyll = get_readable_file_size(getdailytasks(user_id, check_leech=True)) if config_dict['DAILY_LEECH_LIMIT'] and user_id != OWNER_ID and not is_sudo(user_id) and not is_paid(user_id) else "Unlimited"
         lsplit = get_readable_file_size(user_dict['split_size']) if user_dict and user_dict.get('split_size') else get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)"
@@ -200,11 +200,11 @@ def get_user_settings(from_user, key=None):
             buttons.sbutton("sᴇɴᴅ ᴀᴅ ᴅᴏᴄᴜᴍᴇɴᴛ", f"userset {user_id} doc")
 
         if ospath.exists(thumbpath):
-            thumbmsg = "Exists"
+            thumbmsg = "ᴇxɪsᴛs"
             buttons.sbutton("ᴄʜᴀɴɢᴇ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} sthumb leech")
-            buttons.sbutton("sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} showthumb")
+            #buttons.sbutton("sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} showthumb")
         else:
-            thumbmsg = "Not Exists"
+            thumbmsg = "ɴᴏᴛ ᴇxɪsᴛs"
             buttons.sbutton("sᴇᴛ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} sthumb leech")
 
         esplits = 'ᴇɴᴀʙʟᴇᴅ' if not user_dict and config_dict['EQUAL_SPLITS'] or user_dict and user_dict.get('equal_splits') else 'ᴅɪsᴀʙʟᴇᴅ'
@@ -385,6 +385,7 @@ def edit_user_settings(update, context):
         thumbpath = f"Thumbnails/{user_id}.jpg"
         if ospath.exists(thumbpath):
             buttons.sbutton("ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴘʜᴏᴛᴏ", f"userset {user_id} dthumb")
+            buttons.sbutton("sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} showthumb")
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[3]}")
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         editMessage('sᴇɴᴅ ᴀ ᴘʜᴏᴛᴏ ᴛᴏ ꜱᴀᴠᴇ ɪᴛ ᴀꜱ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ.', message, buttons.build_menu(2))
