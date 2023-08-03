@@ -16,7 +16,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot.helper.ext_utils.db_handler import DbManger
 from bot.helper.ext_utils.bot_utils import update_user_ldata, is_paid, is_sudo, get_readable_file_size, getUserTDs, getdailytasks
-from bot.helper.themes import BotTheme
+#from bot.helper.themes import BotTheme
 
 handler_dict = {}
 example_dict = {'prefix':'1. <code>@ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ ᴏʀ ᴀɴʏᴛʜɪɴɢ</code>', 
@@ -54,8 +54,8 @@ fname_dict = {'prefix': 'Leech Prefix',
 
 def get_user_settings(from_user, key=None):
     user_id = from_user.id
-    #name = from_user.full_name
-    name = from_user.mention(style="html")
+    name = from_user.full_name
+    #name = from_user.mention(style="html")
     buttons = ButtonMaker()
     thumbpath = f"Thumbnails/{user_id}.jpg"
     user_dict = user_data.get(user_id, False)
@@ -67,8 +67,8 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton("ᴍɪʀʀᴏʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
         buttons.sbutton("ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
         buttons.sbutton("✘ ᴄʟᴏsᴇ ✘", f"userset {user_id} close")
-        #text = "<b><u>🥀 ᴜsᴇʀ sᴇᴛᴛɪɴɢs 📌</u></b>"
-        text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=from_user.language_code, DC=from_user.dc_id)
+        text = "<b><u>🥀 ᴜsᴇʀ sᴇᴛᴛɪɴɢs 📌</u></b>"
+        #text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=from_user.language_code, DC=from_user.dc_id)
         button = buttons.build_menu(1)
     elif key == 'universal':
         imdb = user_dict['imdb_temp'] if user_dict and user_dict.get('imdb_temp') else "Not Exists"
