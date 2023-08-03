@@ -65,7 +65,7 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton("ᴍɪʀʀᴏʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
         buttons.sbutton("ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
         buttons.sbutton("✘ ᴄʟᴏsᴇ ✘", f"userset {user_id} close")
-        text = "User Settings:"
+        text = "<b><u>🥀 ᴜsᴇʀ sᴇᴛᴛɪɴɢs 📌</u></b>"
         button = buttons.build_menu(1)
     elif key == 'universal':
         imdb = user_dict['imdb_temp'] if user_dict and user_dict.get('imdb_temp') else "Not Exists"
@@ -88,20 +88,20 @@ def get_user_settings(from_user, key=None):
         if not config_dict['FORCE_BOT_PM']:
             if user_dict and user_dict.get('ubot_pm'):
                 ubotpm = "Enabled"
-                buttons.sbutton("Disable User PM", f"userset {user_id} ubotoff")
+                buttons.sbutton("ᴅɪsᴀʙʟᴇ ᴜsᴇʀ ᴘᴍ", f"userset {user_id} ubotoff")
             else:
                 ubotpm = "Disabled"
-                buttons.sbutton("Enable User PM", f"userset {user_id} uboton")
+                buttons.sbutton("ᴇɴᴀʙʟᴇ ᴜsᴇʀ ᴘᴍ", f"userset {user_id} uboton")
         else:
             ubotpm = "Force Enabled By Owner"
-            buttons.sbutton("Disable User PM", f"userset {user_id} ubotdisable")
+            buttons.sbutton("ᴅɪsᴀʙʟᴇ ᴜsᴇʀ ᴘᴍ", f"userset {user_id} ubotdisable")
 
         imdbval, anival = '', ''
         if imdb != "Not Exists":
             imdbval = "Exists"
             buttons.sbutton("ᴄʜᴀɴɢᴇ ɪᴍᴅʙ", f"userset {user_id} suniversal imdb_temp universal")
             buttons.sbutton("sʜᴏᴡ ɪᴍᴅʙ", f"userset {user_id} showimdb")
-        else: buttons.sbutton("Set IMDB", f"userset {user_id} suniversal imdb_temp universal")
+        else: buttons.sbutton("sᴇᴛ ɪᴍᴅʙ", f"userset {user_id} suniversal imdb_temp universal")
         if anilist != "Not Exists":
             anival = "Exists"
             buttons.sbutton("ᴄʜᴀɴɢᴇ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} suniversal ani_temp universal")
@@ -143,41 +143,41 @@ def get_user_settings(from_user, key=None):
             if user_dict and user_dict.get('usertd'):
                 if user_dict.get('is_usertd'):
                     usertdstatus = "Enabled"
-                    buttons.sbutton("Disable User TD", f"userset {user_id} usertdxoff")
+                    buttons.sbutton("ᴅɪsᴀʙʟᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxoff")
                 else:
                     usertdstatus = "Disabled"
-                    buttons.sbutton("Enable User TD", f"userset {user_id} usertdxon")
+                    buttons.sbutton("ᴇɴᴀʙʟᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxon")
             else:
                 usertdstatus = "Disabled"
-                buttons.sbutton("Enable User TD", f"userset {user_id} usertdxnotset")
+                buttons.sbutton("ᴇɴᴀʙʟᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxnotset")
         else:
-            usertdstatus = "User TD Feature Disabled By Owner!"
-            buttons.sbutton("Enable User TD", f"userset {user_id} usertdxdisable")
+            usertdstatus = "ᴜsᴇʀ ᴛᴅ ғᴇᴀᴛᴜʀᴇ ᴅɪꜱᴀʙʟᴇᴅ ʙʏ ᴏᴡɴᴇʀ !!!"
+            buttons.sbutton("ᴇɴᴀʙʟᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxdisable")
         usertds = ''
         if usertd != "Not Exists":
             usertds = f"Exists ( Total : {len(GDrive)} )"
             if config_dict['ENABLE_USR_TD']:
-              buttons.sbutton("Change/Delete User TD(s)", f"userset {user_id} suniversal usertd mirror")
+              buttons.sbutton("ᴄʜᴀɴɢᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} suniversal usertd mirror")
             else:
-              buttons.sbutton("Change/Delete User TD(s)", f"userset {user_id} usertdxdisable")  
-            buttons.sbutton("Show User TD(s)", f"userset {user_id} showusertds")
+              buttons.sbutton("ᴄʜᴀɴɢᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxdisable")  
+            buttons.sbutton("sʜᴏᴡ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} showusertds")
         else:
             if config_dict['ENABLE_USR_TD']:
-              buttons.sbutton("Set User TD(s)", f"userset {user_id} suniversal usertd mirror")
+              buttons.sbutton("sᴇᴛ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} suniversal usertd mirror")
             else:
-              buttons.sbutton("Set User TD(s)", f"userset {user_id} usertdxdisable")
+              buttons.sbutton("sᴇᴛ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxdisable")
 
-        buttons.sbutton("Back", f"userset {user_id} mback", 'footer')
-        buttons.sbutton("Close", f"userset {user_id} close", 'footer')
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         button = buttons.build_menu(2)
-        text = f'''<u>Mirror/Clone Settings for <a href='tg://user?id={user_id}'>{name}</a></u>
+        text = f'''<b><u>ᴍɪʀʀᴏʀ ᴀɴᴅ ᴄʟᴏɴᴇ sᴇᴛᴛɪɴɢꜱ ғᴏʀ <a href='tg://user?id={user_id}'>{name}</a></u></b>
 
-╭ Prefix : <b>{escape(prefix)}</b>
-├ Suffix : <b>{suffix}</b>
-├ User TD Mode : <b>{usertdstatus}</b>
-├ User TeamDrive(s) : <b>{usertds if usertds else usertd}</b>
-├ Daily Upload : <b>{dailyup} / {dailytlup} per day</b>
-├ Remname : <code>{escape(remname)}</code>
+<b>ᴘʀᴇғɪx</b> : <code>{escape(prefix)}</code>
+<b>sᴜғғɪx</b> : <code>{suffix}</code>
+<b>ᴜsᴇʀ ᴛᴅ ᴍᴏᴅᴇ</b> : <code>{usertdstatus}</code>
+<b>ᴜᴀᴇʀ ᴛᴇᴀᴍ-ᴅʀɪᴠᴇ (s)</b> : <code>{usertds if usertds else usertd}</code>
+<b>ᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ</b> : <code>{dailyup} / {dailytlup} per day</code>
+<b>ʀᴇᴍɴᴀᴍᴇ</b> : <code>{escape(remname)}</code>
 '''
     elif key == 'leech':
         prefix = user_dict['prefix'] if user_dict and user_dict.get('prefix') else "Not Exists"
@@ -209,42 +209,42 @@ def get_user_settings(from_user, key=None):
 
         esplits = 'Enabled' if not user_dict and config_dict['EQUAL_SPLITS'] or user_dict and user_dict.get('equal_splits') else 'Disabled'
 
-        buttxt = "Change/Delete UserLog" if userlog != "Not Exists" else "Set UserLog"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜsᴇʀʟᴏɢ" if userlog != "Not Exists" else "sᴇᴛ ᴜsᴇʀʟᴏɢ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
-        buttxt = "Change/Delete Prefix" if prefix != "Not Exists" else "Set Prefix"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴘʀᴇғɪx" if prefix != "Not Exists" else "sᴇᴛ ᴘʀᴇғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal prefix leech")
-        buttxt = "Change/Delete Suffix" if suffix != "Not Exists" else "Set Suffix"
+        buttxt = "ᴄʜᴀɴɢᴇ sᴜғғɪx" if suffix != "Not Exists" else "sᴇᴛ sᴜғғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal suffix leech")
-        buttxt = "Change/Delete Caption" if caption != "Not Exists" else "Set Caption"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "Not Exists" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
-        buttxt = "Change/Delete Remname" if remname != "Not Exists" else "Set Remname"
+        buttxt = "ᴄʜᴀɴɢᴇ ʀᴇᴍɴᴀᴍᴇ" if remname != "Not Exists" else "sᴇᴛ ʀᴇᴍɴᴀᴍᴇ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal remname leech")
-        buttxt = "Change/Delete ssite" if ssite != "Not Exists" else "Set Site"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
-        buttxt = "Change/Delete sapi" if sapi != "Not Exists" else "Set Api"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
-        buttxt = "Change/Delete Leech Split" if lsplit != get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)" else "Set Leech Split"
+        buttxt = "ᴄʜᴀɴɢᴇ ʟᴇᴇᴄʜ-sᴘʟɪᴛ" if lsplit != get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)" else "sᴇᴛ ʟᴇᴇᴄʜ-sᴘʟɪᴛ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal split_size leech")
-        if cfont != "<b>Not Exists</b>": buttons.sbutton("Remove CapFont", f"userset {user_id} cfont")
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "Not Exists" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "Not Exists" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
+        if cfont != "<code>Not Exists</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")
 
-        buttons.sbutton("Back", f"userset {user_id} mback", 'footer')
-        buttons.sbutton("Close", f"userset {user_id} close", 'footer')
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         button = buttons.build_menu(2)
-        text = f'''<u>Leech Settings for <a href='tg://user?id={user_id}'>{name}</a></u>
+        text = f'''<b><u>🥀 ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs ғᴏʀ ✨<a href='tg://user?id={user_id}'>{name}</a></u></b>
 
-╭ Leech Type : <b>{ltype}</b>
-├ Custom Thumbnail : <b>{thumbmsg}</b>
-├ UserLog : <b>{userlog}</b>
-├ Prefix : <b>{escape(prefix)}</b>
-├ Suffix : <b>{suffix}</b>
-├ Caption : <b>{escape(caption)}</b>
-├ CapFont : {cfont}
-├ Site : <b>{ssite}</b>
-├ Api : <b>{sapi}</b>
-├ Leech Split Size : <b>{lsplit}</b>
-├ Equal Split : <b>{esplits}</b>
-├ Daily Leech : <b>{dailyll} / {dailytlle} per day</b>
-├ Remname : <code>{escape(remname)}</code>
+<b>ʟᴇᴇᴄʜ ᴛʏᴘᴇ</b> : <code>{ltype}</code>
+<b>ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ</b> : <code>{thumbmsg}</code>
+<b>ᴜsᴇʀ ʟᴏɢ</b> : <code>{userlog}</code>
+<b>ᴘʀᴇғɪx</b> : <code>{escape(prefix)}</code>
+<b>sᴜғғɪx</b> : <code>{suffix}</code>
+<b>ᴄᴀᴘᴛɪᴏɴ</b> : <code>{escape(caption)}</code>
+<b>ᴄᴀᴘ ғᴏɴᴛ</b> : <code>{cfont}</code>
+<b>sʜᴏʀᴛɴᴇʀ sɪᴛᴇ</b> : <code>{ssite}</code>
+<b>sʜᴏʀᴛɴᴇʀ ᴀᴘɪ</b> : <code>{sapi}</code>
+<b>ʟᴇᴇᴄʜ sᴘʟɪᴛ sɪᴢᴇ</b> : <code>{lsplit}</code>
+<b>ᴇǫᴜᴀʟ sᴘʟɪᴛ</b> : <code>{esplits}</code>
+<b>ᴅᴀɪʟʏ ʟᴇᴇᴄʜ</b> : <code>{dailyll} / {dailytlle} per day</code>
+<b>ʀᴇᴍɴᴀᴍᴇ</b> : <code>{escape(remname)}</code>
 '''
     if uplan == "Paid User" and key:
         ex_date = user_dict.get('expiry_date', False)
