@@ -19,14 +19,17 @@ from bot.helper.ext_utils.bot_utils import update_user_ldata, is_paid, is_sudo, 
 from bot.helper.themes import BotTheme
 
 handler_dict = {}
-example_dict = {'prefix':'1. <code>@your_channel_username or Anything</code>', 
-                'mprefix':'1. <code>@your_channel_username or Anything</code>', 
-                'suffix':'1. <code>~ WZML</code>\n2. <code>~ @channelname</code>', 
-                'msuffix':'1. <code>~ WZML</code>\n2. <code>~ @channelname</code>', 
-                'caption': '1.'+escape("<b>{filename}</b>\nJoin Now : @WeebZone_updates")+'\nCheck all available fillings options <a href="">HERE</a> and Make Custom Caption.', 
-                'userlog':'1. <code>-100xxxxxx or Channel ID</code>',
-                'ssite': ['Send Site Link like kpslink.in', 'Set Your Site link'],
-                'sapi': ['Send Site API ID', 'Set Your Site Api Id'],
+example_dict = {'prefix':'1. <code>@ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ ᴏʀ ᴀɴʏᴛʜɪɴɢ</code>', 
+                'mprefix':'1. <code>@ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ ᴏʀ ᴀɴʏᴛʜɪɴɢ</code>', 
+                'suffix':'1. <code>~ ᴏᴍɢ</code>\n2. <code>~ @ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ</code>', 
+                'msuffix':'1. <code>~ ᴏᴍɢ</code>\n2. <code>~ @ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ</code>', 
+                'caption': '<code><b>{filename}
+
+➠Fast Download Link :
+indexlink</b></code>', 
+                'userlog':'<code>-100xxxxxx or Channel ID</code>',
+                'ssite': '<b>sᴇɴᴅ sɪᴛᴇ ʟɪɴᴋ ʟɪᴋᴇ <code>kpslink.in</code>\n\n📌 sᴇᴛ ʏᴏᴜʀ sɪᴛᴇ ʟɪɴᴋ</b>',
+                'sapi': '<b>sᴇɴᴅ sɪᴛᴇ ᴀᴘɪ ɪᴅ - <code>a33ce12542055ff79361d9bcc681ece612bdcaf8</code>\n\n📌 sᴇᴛ ʏᴏᴜʀ sɪᴛᴇ ᴀᴘɪ ɪᴅ</b>',
                 'usertd':'1. <code>UserTD_Name 1TSYgS-88SkhkSuoS-KHSi7%^&s9HKj https://1.xyz.workers.dev/0:/Leecher</code>\n<b> Do not forget to add '+config_dict['SA_MAIL']+' to your TD as Content Manager</b>',
                 'remname':'<b>Syntax:</b> previousname:newname:times|previousname:newname:times\n\n1. Fork:Star|Here:Now:1|WZML\n\n<b>Output :</b> Star Now : Click Here.txt', 
                 'mremname':'<b>Syntax:</b> previousname:newname:times|previousname:newname:times\n\n1. Fork:Star|Here:Now:1|WZML\n\n<b>Output :</b> Star Now : Click Here.txt', 
