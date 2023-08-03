@@ -23,10 +23,7 @@ example_dict = {'prefix':'1. <code>@ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ ᴏ
                 'mprefix':'1. <code>@ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ ᴏʀ ᴀɴʏᴛʜɪɴɢ</code>', 
                 'suffix':'1. <code>~ ᴏᴍɢ</code>\n2. <code>~ @ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ</code>', 
                 'msuffix':'1. <code>~ ᴏᴍɢ</code>\n2. <code>~ @ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɴᴀᴍᴇ</code>', 
-                'caption': '<code><b>{filename}
-
-➠Fast Download Link :
-indexlink</b></code>', 
+                'caption': '<code><b>{filename}</b></code>', 
                 'userlog':'<code>-100xxxxxx or Channel ID</code>',
                 'ssite': '<b>sᴇɴᴅ sɪᴛᴇ ʟɪɴᴋ ʟɪᴋᴇ <code>kpslink.in</code>\n\n📌 sᴇᴛ ʏᴏᴜʀ sɪᴛᴇ ʟɪɴᴋ</b>',
                 'sapi': '<b>sᴇɴᴅ sɪᴛᴇ ᴀᴘɪ ɪᴅ - <code>a33ce12542055ff79361d9bcc681ece612bdcaf8</code>\n\n📌 sᴇᴛ ʏᴏᴜʀ sɪᴛᴇ ᴀᴘɪ ɪᴅ</b>',
