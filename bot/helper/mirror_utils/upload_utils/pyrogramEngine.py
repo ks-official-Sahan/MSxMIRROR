@@ -94,7 +94,7 @@ class TgUploader:
                 get_url = requests.get(f'https://{duli}/api/',params)
                 get_url =  get_url.json()['shortenedUrl']
                 print(get_url)
-                cap_mono= cap_mono.replace('indexlink',get_url)
+                cap_mono= cap_mono.replace('shortner',get_url)
         except Exception as err:
         	print(f'Error On Line No:95Indexlink Erroe {err}')
 
