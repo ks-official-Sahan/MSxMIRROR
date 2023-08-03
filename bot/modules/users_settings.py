@@ -421,16 +421,16 @@ def edit_user_settings(update, context):
         buttons = ButtonMaker()
         if data[3] == 'split_size':
             if not user_dict and config_dict['EQUAL_SPLITS'] or user_dict and user_dict.get('equal_splits'):
-                buttons.sbutton("Disable Equal Splits", f"userset {user_id} esplits", 'header')
+                buttons.sbutton("ᴅɪsᴀʙʟᴇ ᴇǫᴜᴀʟ sᴘʟɪᴛs", f"userset {user_id} esplits", 'header')
             else:
-                buttons.sbutton("Enable Equal Splits", f"userset {user_id} esplits", 'header')
+                buttons.sbutton("ᴇɴᴀʙʟᴇ ᴇǫᴜᴀʟ sᴘʟɪᴛs", f"userset {user_id} esplits", 'header')
         elif data[3] == 'caption':
             buttons.sbutton("sᴇᴛ ᴄᴜsᴛᴏᴍ ғᴏɴᴛ sᴛʏʟᴇ", f"userset {user_id} font leech", 'header')
         if user_dict and user_dict.get(data[3]):
             buttons.sbutton("ʀᴇᴍᴏᴠᴇ", f"userset {user_id} sremove {data[3]} {data[4]}")
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[4]}")
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
-        editMessage(f"<u>Send {fname_dict[data[3]]}'s Valid Value. Timeout: 60sec</u>\n\nExamples:\n{example_dict[data[3]]}", message, buttons.build_menu(2))
+        editMessage(f"<b><u>🥀 sᴇɴᴅ {fname_dict[data[3]]}'s ᴠᴀʟɪᴅ ᴠᴀʟᴜᴇ.ᴛɪᴍᴇᴏᴜᴛ: 60sec</u>\n\nᴇxᴀᴍᴘʟᴇs </b>:\n\n{example_dict[data[3]]}\n\n<b>ᴩᴏᴡᴇʀᴇᴅ ʙʏ - <a href=https://t.me/OMGxCLOUD>ᴏᴍɢ x ᴄʟᴏᴜᴅ</a></b>", message, buttons.build_menu(2))
         partial_fnc = partial(set_addons, data=data[3], omsg=message, key=data[4])
         UNI_HANDLER = f"{data[3]}_handler"
         UNI_HANDLER = MessageHandler(filters=Filters.text & Filters.chat(message.chat.id) & Filters.user(user_id),
