@@ -80,7 +80,7 @@ def get_user_settings(from_user, key=None):
             lastused = f"{t[0]}h {t[1]}m {t[2].split('.')[0]}s ago"
         else: lastused = "Bot Not Used"
 
-        buttxt = "ᴄʜᴀɴɢᴇ ʏᴛ-ᴅʟᴘ" if ytq != "Not Exists" else "sᴇᴛ ʏᴛ-ᴅʟᴘ"
+        buttxt = "ᴄʜᴀɴɢᴇ ʏᴛ-ᴅʟᴘ" if ytq != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ʏᴛ-ᴅʟᴘ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal yt_ql universal")
         buttxt = "ᴄʜᴀɴɢᴇ ʟɪsᴛ" if ulist != f'{config_dict["LIST_MODE"].lower().capitalize()} (Default)' else "sᴇᴛ ʟɪsᴛ"
         buttons.sbutton(buttxt, f"userset {user_id} setulist universal")
@@ -97,13 +97,13 @@ def get_user_settings(from_user, key=None):
             buttons.sbutton("ᴅɪsᴀʙʟᴇ ᴜsᴇʀ ᴘᴍ", f"userset {user_id} ubotdisable")
 
         imdbval, anival = '', ''
-        if imdb != "Not Exists":
-            imdbval = "Exists"
+        if imdb != "ɴᴏᴛ ᴇxɪsᴛs":
+            imdbval = "ᴇxɪsᴛs"
             buttons.sbutton("ᴄʜᴀɴɢᴇ ɪᴍᴅʙ", f"userset {user_id} suniversal imdb_temp universal")
             buttons.sbutton("sʜᴏᴡ ɪᴍᴅʙ", f"userset {user_id} showimdb")
         else: buttons.sbutton("sᴇᴛ ɪᴍᴅʙ", f"userset {user_id} suniversal imdb_temp universal")
-        if anilist != "Not Exists":
-            anival = "Exists"
+        if anilist != "ɴᴏᴛ ᴇxɪsᴛs":
+            anival = "ᴇxɪsᴛs"
             buttons.sbutton("ᴄʜᴀɴɢᴇ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} suniversal ani_temp universal")
             buttons.sbutton("sʜᴏᴡ ᴀɴɪ-ʟɪsᴛ", f"userset {user_id} showanilist")
         else:
@@ -128,7 +128,7 @@ def get_user_settings(from_user, key=None):
         if user_dict and user_dict.get('usertd'):
             usertd = user_dict['usertd']
             GDrive, _, _ = getUserTDs(user_id, force=True)
-        else: usertd = "Not Exists"
+        else: usertd = "ɴᴏᴛ ᴇxɪsᴛs"
         dailytlup = get_readable_file_size(config_dict['DAILY_MIRROR_LIMIT'] * 1024**3) if config_dict['DAILY_MIRROR_LIMIT'] else "Unlimited"
         dailyup = get_readable_file_size(getdailytasks(user_id, check_mirror=True)) if config_dict['DAILY_MIRROR_LIMIT'] and user_id != OWNER_ID and not is_sudo(user_id) and not is_paid(user_id) else "Unlimited"
 
@@ -154,8 +154,8 @@ def get_user_settings(from_user, key=None):
             usertdstatus = "ᴜsᴇʀ ᴛᴅ ғᴇᴀᴛᴜʀᴇ ᴅɪꜱᴀʙʟᴇᴅ ʙʏ ᴏᴡɴᴇʀ !!!"
             buttons.sbutton("ᴇɴᴀʙʟᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} usertdxdisable")
         usertds = ''
-        if usertd != "Not Exists":
-            usertds = f"Exists ( Total : {len(GDrive)} )"
+        if usertd != "ɴᴏᴛ ᴇxɪsᴛs":
+            usertds = f"ᴇxɪsᴛs (ᴛᴏᴛᴀʟ : {len(GDrive)})"
             if config_dict['ENABLE_USR_TD']:
               buttons.sbutton("ᴄʜᴀɴɢᴇ ᴜsᴇʀ ᴛᴅ", f"userset {user_id} suniversal usertd mirror")
             else:
@@ -193,39 +193,39 @@ def get_user_settings(from_user, key=None):
         lsplit = get_readable_file_size(user_dict['split_size']) if user_dict and user_dict.get('split_size') else get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)"
 
         if not user_dict and config_dict['AS_DOCUMENT'] or user_dict and user_dict.get('as_doc'):
-            ltype = "DOCUMENT"
-            buttons.sbutton("Send As Media", f"userset {user_id} med")
+            ltype = "ᴅᴏᴄᴜᴍᴇɴᴛ"
+            buttons.sbutton("sᴇɴᴅ ᴀᴅ ᴍᴇᴅɪᴀ", f"userset {user_id} med")
         else:
-            ltype = "MEDIA"
-            buttons.sbutton("Send As Document", f"userset {user_id} doc")
+            ltype = "ᴍᴇᴅɪᴀ"
+            buttons.sbutton("sᴇɴᴅ ᴀᴅ ᴅᴏᴄᴜᴍᴇɴᴛ", f"userset {user_id} doc")
 
         if ospath.exists(thumbpath):
             thumbmsg = "Exists"
-            buttons.sbutton("Change/Delete Thumbnail", f"userset {user_id} sthumb leech")
-            buttons.sbutton("Show Thumbnail", f"userset {user_id} showthumb")
+            buttons.sbutton("ᴄʜᴀɴɢᴇ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} sthumb leech")
+            buttons.sbutton("sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} showthumb")
         else:
             thumbmsg = "Not Exists"
-            buttons.sbutton("Set Thumbnail", f"userset {user_id} sthumb leech")
+            buttons.sbutton("sᴇᴛ ᴛʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} sthumb leech")
 
-        esplits = 'Enabled' if not user_dict and config_dict['EQUAL_SPLITS'] or user_dict and user_dict.get('equal_splits') else 'Disabled'
+        esplits = 'ᴇɴᴀʙʟᴇᴅ' if not user_dict and config_dict['EQUAL_SPLITS'] or user_dict and user_dict.get('equal_splits') else 'ᴅɪsᴀʙʟᴇᴅ'
 
-        buttxt = "ᴄʜᴀɴɢᴇ ᴜsᴇʀʟᴏɢ" if userlog != "Not Exists" else "sᴇᴛ ᴜsᴇʀʟᴏɢ"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜsᴇʀʟᴏɢ" if userlog != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜsᴇʀʟᴏɢ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal userlog leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴘʀᴇғɪx" if prefix != "Not Exists" else "sᴇᴛ ᴘʀᴇғɪx"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴘʀᴇғɪx" if prefix != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴘʀᴇғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal prefix leech")
-        buttxt = "ᴄʜᴀɴɢᴇ sᴜғғɪx" if suffix != "Not Exists" else "sᴇᴛ sᴜғғɪx"
+        buttxt = "ᴄʜᴀɴɢᴇ sᴜғғɪx" if suffix != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ sᴜғғɪx"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal suffix leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "Not Exists" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ʀᴇᴍɴᴀᴍᴇ" if remname != "Not Exists" else "sᴇᴛ ʀᴇᴍɴᴀᴍᴇ"
+        buttxt = "ᴄʜᴀɴɢᴇ ʀᴇᴍɴᴀᴍᴇ" if remname != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ʀᴇᴍɴᴀᴍᴇ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal remname leech")
         buttxt = "ᴄʜᴀɴɢᴇ ʟᴇᴇᴄʜ-sᴘʟɪᴛ" if lsplit != get_readable_file_size(config_dict['TG_SPLIT_SIZE']) + "(Default)" else "sᴇᴛ ʟᴇᴇᴄʜ-sᴘʟɪᴛ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal split_size leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "Not Exists" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "Not Exists" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
         buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
-        if cfont != "<code>Not Exists</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")
+        if cfont != "<code>ɴᴏᴛ ᴇxɪsᴛs</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")
 
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
@@ -249,9 +249,9 @@ def get_user_settings(from_user, key=None):
     if uplan == "Paid User" and key:
         ex_date = user_dict.get('expiry_date', False)
         if not ex_date: ex_date = 'Not Specified'
-        text += f"├ User Plan : <b>{uplan}</b>\n"
-        text += f"╰ Expiry Date : <b>{ex_date}</b>"
-    elif key: text += f"╰ User Plan : <b>{uplan}</b>"
+        text += f"<b>ᴜsᴇʀ ᴘʟᴀɴ</b> : <code>{uplan}</code>\n"
+        text += f"<b>ᴇxᴘɪʀʏ ᴅᴀᴛᴇ</b> : <code>{ex_date}</code>"
+    elif key: text += f"<b>ᴜsᴇʀ ᴘʟᴀɴ</b> : <code>{uplan}</code>>"
     return text, button
 
 def update_user_settings(message, from_user, key):
@@ -384,10 +384,10 @@ def edit_user_settings(update, context):
         buttons = ButtonMaker()
         thumbpath = f"Thumbnails/{user_id}.jpg"
         if ospath.exists(thumbpath):
-            buttons.sbutton("Delete", f"userset {user_id} dthumb")
-        buttons.sbutton("Back", f"userset {user_id} back {data[3]}")
-        buttons.sbutton("Close", f"userset {user_id} close", 'footer')
-        editMessage('Send a photo to save it as custom Thumbnail.', message, buttons.build_menu(2))
+            buttons.sbutton("ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴘʜᴏᴛᴏ", f"userset {user_id} dthumb")
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[3]}")
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
+        editMessage('sᴇɴᴅ ᴀ ᴘʜᴏᴛᴏ ᴛᴏ ꜱᴀᴠᴇ ɪᴛ ᴀꜱ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ.', message, buttons.build_menu(2))
         partial_fnc = partial(set_thumb, omsg=message)
         photo_handler = MessageHandler(filters=Filters.photo & Filters.chat(message.chat.id) & Filters.user(user_id),
                                        callback=partial_fnc)
@@ -425,11 +425,11 @@ def edit_user_settings(update, context):
             else:
                 buttons.sbutton("Enable Equal Splits", f"userset {user_id} esplits", 'header')
         elif data[3] == 'caption':
-            buttons.sbutton("Set Custom Font Style", f"userset {user_id} font leech", 'header')
+            buttons.sbutton("sᴇᴛ ᴄᴜsᴛᴏᴍ ғᴏɴᴛ sᴛʏʟᴇ", f"userset {user_id} font leech", 'header')
         if user_dict and user_dict.get(data[3]):
-            buttons.sbutton("Remove", f"userset {user_id} sremove {data[3]} {data[4]}")
-        buttons.sbutton("Back", f"userset {user_id} back {data[4]}")
-        buttons.sbutton("Close", f"userset {user_id} close", 'footer')
+            buttons.sbutton("ʀᴇᴍᴏᴠᴇ", f"userset {user_id} sremove {data[3]} {data[4]}")
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[4]}")
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         editMessage(f"<u>Send {fname_dict[data[3]]}'s Valid Value. Timeout: 60sec</u>\n\nExamples:\n{example_dict[data[3]]}", message, buttons.build_menu(2))
         partial_fnc = partial(set_addons, data=data[3], omsg=message, key=data[4])
         UNI_HANDLER = f"{data[3]}_handler"
@@ -460,15 +460,15 @@ def edit_user_settings(update, context):
         handler_dict[user_id] = False
         FONT_SPELL = {'b':'<b>Bold</b>', 'i':'<i>Italics</i>', 'code':'<code>Monospace</code>', 's':'<s>Strike</s>', 'u':'<u>Underline</u>', 'tg-spoiler':'<tg-spoiler>Spoiler</tg-spoiler>'}
         buttons = ButtonMaker()
-        buttons.sbutton("Spoiler", f"userset {user_id} Spoiler")
-        buttons.sbutton("Italics", f"userset {user_id} Italics")
-        buttons.sbutton("Monospace", f"userset {user_id} Code")
-        buttons.sbutton("Strike", f"userset {user_id} Strike")
-        buttons.sbutton("Underline", f"userset {user_id} Underline")
-        buttons.sbutton("Bold", f"userset {user_id} Bold")
-        buttons.sbutton("Regular", f"userset {user_id} Regular")
-        buttons.sbutton("Back", f"userset {user_id} back {data[3]}")
-        buttons.sbutton("Close", f"userset {user_id} close")
+        buttons.sbutton("sᴘᴏɪʟᴇʀ", f"userset {user_id} Spoiler")
+        buttons.sbutton("ɪᴛᴀʟɪᴄs", f"userset {user_id} Italics")
+        buttons.sbutton("ᴍᴏɴᴏsᴘᴀᴄᴇ", f"userset {user_id} Code")
+        buttons.sbutton("sᴛʀɪᴋᴇ", f"userset {user_id} Strike")
+        buttons.sbutton("ᴜɴᴅᴇʀ ʟɪɴᴇ", f"userset {user_id} Underline")
+        buttons.sbutton("ʙʟᴏᴅ", f"userset {user_id} Bold")
+        buttons.sbutton("ʀᴇɢᴜʟᴀʀ", f"userset {user_id} Regular")
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[3]}")
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close")
         btns = buttons.build_menu(2)
         if user_dict and user_dict.get('cfont'): cf = user_data[user_id]['cfont']
         else: cf = [f'{FONT_SPELL[config_dict["CAPTION_FONT"]]} (Default)']
@@ -533,11 +533,11 @@ def edit_user_settings(update, context):
         query.answer()
         handler_dict[user_id] = False
         buttons = ButtonMaker()
-        buttons.sbutton("HTML", f"userset {user_id} ulist HTML")
-        buttons.sbutton("Telegraph", f"userset {user_id} ulist Telegraph")
-        buttons.sbutton("Telegram Direct", f"userset {user_id} ulist Tele_Msg")
-        buttons.sbutton("Back", f"userset {user_id} back {data[3]}", "footer")
-        buttons.sbutton("Close", f"userset {user_id} close", "footer")
+        buttons.sbutton("ʜᴛᴍʟ", f"userset {user_id} ulist HTML")
+        buttons.sbutton("ᴛᴇʟᴇɢʀᴀᴘʜ", f"userset {user_id} ulist Telegraph")
+        buttons.sbutton("ᴛᴇʟᴇɢʀᴀᴍ ᴅɪʀᴇᴄᴛ", f"userset {user_id} ulist Tele_Msg")
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[3]}", "footer")
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", "footer")
         if user_id in user_data and user_data[user_id].get('ulist_typ'): ul = user_data[user_id]['ulist_typ']
         else: ul = f'{config_dict["LIST_MODE"].lower().capitalize()} (Default)'
         editMessage("<u>Change your List Fetch Mode from below:</u>\n\n• Current Mode : " + ul, message, buttons.build_menu(2))
