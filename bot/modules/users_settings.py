@@ -430,7 +430,8 @@ def edit_user_settings(update, context):
             buttons.sbutton("ʀᴇᴍᴏᴠᴇ", f"userset {user_id} sremove {data[3]} {data[4]}")
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} back {data[4]}")
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
-        editMessage(f"<u>🥀 sᴇɴᴅ {fname_dict[data[3]]}'s ᴠᴀʟɪᴅ ᴠᴀʟᴜᴇ.ᴛɪᴍᴇᴏᴜᴛ: 60sec</u>\n\nᴇxᴀᴍᴘʟᴇs:\n\n{example_dict[data[3]]}\n\n<b>ᴩᴏᴡᴇʀᴇᴅ ʙʏ - <a href=https://t.me/OMGxCLOUD>ᴏᴍɢ x ᴄʟᴏᴜᴅ</a></b>", message, buttons.build_menu(2))
+        #editMessage(f"<u>🥀 sᴇɴᴅ {fname_dict[data[3]]}'s ᴠᴀʟɪᴅ ᴠᴀʟᴜᴇ.ᴛɪᴍᴇᴏᴜᴛ: 60sec</u>\n\nᴇxᴀᴍᴘʟᴇs:\n\n{example_dict[data[3]]}\n\n<b>ᴩᴏᴡᴇʀᴇᴅ ʙʏ - <a href=https://t.me/OMGxCLOUD>ᴏᴍɢ x ᴄʟᴏᴜᴅ</a></b>", message, buttons.build_menu(2))
+        editMessage(f"<u>Send {fname_dict[data[3]]}'s Valid Value. Timeout: 60sec</u>\n\nExamples:\n{example_dict[data[3]]}", message, buttons.build_menu(2))
         partial_fnc = partial(set_addons, data=data[3], omsg=message, key=data[4])
         UNI_HANDLER = f"{data[3]}_handler"
         UNI_HANDLER = MessageHandler(filters=Filters.text & Filters.chat(message.chat.id) & Filters.user(user_id),
