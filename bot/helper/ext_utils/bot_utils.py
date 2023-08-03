@@ -255,7 +255,7 @@ def get_readable_message():
             msg += f"<b>✓ ғɪʟᴇ ɴᴀᴍᴇ</b> : <code>{escape(str(download.name()))}</code>\n"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_CONVERTING, MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
                 if config_dict['EMOJI_THEME']:
-                    msg += f"\n<b>{get_progress_bar_string(download)} {download.progress()}</b>"
+                    msg += f"\n<b>» {get_progress_bar_string(download)} {download.progress()}</b>"
                     msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
                     msg += f"\n<b>» ᴅᴏɴᴇ :</b> <code>{get_readable_file_size(download.processed_bytes())} of {download.size()}</code>"
                     msg += f"\n<b>» sᴘᴇᴇᴅ :</b> <code>{download.speed()}</code>"
@@ -264,7 +264,7 @@ def get_readable_message():
                     msg += f"\n<b>» ᴇɴɢɪɴᴇ :</b> <code>{download.eng()}</code>"
                     
                 else:
-                    msg += f"\n<b>{get_progress_bar_string(download)} {download.progress()}</b>"
+                    msg += f"\n<b>» {get_progress_bar_string(download)} {download.progress()}</b>"
                     msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
                     msg += f"\n<b>» ᴅᴏɴᴇ :</b> <code>{get_readable_file_size(download.processed_bytes())} of {download.size()}</code>"
                     msg += f"\n<b>» sᴘᴇᴇᴅ :</b> <code>{download.speed()}</code>"
@@ -357,24 +357,23 @@ def get_readable_message():
         if config_dict['TOTAL_TASKS_LIMIT']:
             TASKS_COUNT = f"<b>Task Limit: </b>{config_dict['TOTAL_TASKS_LIMIT']} | <b>Run:</b> {len(download_dict)} | <b>Free:</b> {config_dict['TOTAL_TASKS_LIMIT'] - len(download_dict)}\n"
         else:
-            TASKS_COUNT = f"<b><u>📌 ᴛᴀsᴋs ʀᴜɴɴɪɴɢ -</u></b> {len(download_dict)}\n"
+            TASKS_COUNT = f"<b>» ᴛᴀsᴋs ʀᴜɴɴɪɴɢ -</b> <code>{len(download_dict)}</code>\n"
         if config_dict['EMOJI_THEME']:
             bmsg = f"{TASKS_COUNT}"
-            bmsg += f"<b>ᴄᴘᴜ :</b> {cpu_percent()}% | <b>ғʀᴇᴇ :</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
-            bmsg += f"\n<b>ʀᴀᴍ :</b> {virtual_memory().percent}% | <b>ᴜᴘᴛɪᴍᴇ :</b> {get_readable_time(time() - botStartTime)}"
-            bmsg += f"\n<b>ᴅʟ:</b> {get_readable_file_size(dl_speed)}/s | <b>ᴜʟ :</b> {get_readable_file_size(up_speed)}/s\n\n"
+            bmsg += f"<b>ᴄᴘᴜ :</b> <code>{cpu_percent()}%</code> | <b>ғʀᴇᴇ :</b> <code>{get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}</code>"
+            bmsg += f"\n<b>ʀᴀᴍ :</b> <code>{virtual_memory().percent}%</code> | <b>ᴜᴘᴛɪᴍᴇ :</b> <code>{get_readable_time(time() - botStartTime)}</code>"
+            bmsg += f"\n<b>ᴅʟ:</b> <code>{get_readable_file_size(dl_speed)}/s</code> | <b>ᴜʟ :</b> <code>{get_readable_file_size(up_speed)}/s</code>\n\n"
         else:
             bmsg = f"{TASKS_COUNT}"
-            bmsg += f"<b>ᴄᴘᴜ :</b> {cpu_percent()}% | <b>ғʀᴇᴇ :</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}"
-            bmsg += f"\n<b>ʀᴀᴍ :</b> {virtual_memory().percent}% | <b>ᴜᴘᴛɪᴍᴇ :</b> {get_readable_time(time() - botStartTime)}"
-            bmsg += f"\n<b>ᴅʟ:</b> {get_readable_file_size(dl_speed)}/s | <b>ᴜʟ :</b> {get_readable_file_size(up_speed)}/s\n\n"
-
+            bmsg += f"<b>ᴄᴘᴜ :</b> <code>{cpu_percent()}%</code> | <b>ғʀᴇᴇ :</b> <code>{get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)}</code>"
+            bmsg += f"\n<b>ʀᴀᴍ :</b> <code>{virtual_memory().percent}%</code> | <b>ᴜᴘᴛɪᴍᴇ :</b> <code>{get_readable_time(time() - botStartTime)}</code>"
+            bmsg += f"\n<b>ᴅʟ:</b> <code>{get_readable_file_size(dl_speed)}/s</code> | <b>ᴜʟ :</b> <code>{get_readable_file_size(up_speed)}/s</code>\n\n"
+            
         buttons = ButtonMaker()
         buttons.sbutton("⇇ ʙᴀᴄᴋ", "status pre")
         buttons.sbutton(f"{PAGE_NO}/{PAGES}", str(THREE))
         buttons.sbutton("ɴᴇxᴛ ⇉", "status nex")
         buttons.sbutton("ʀᴇғʀᴇsʜ", "status refresh")
-        #buttons.buildbutton(f"♛ ᴄʀᴇᴀᴛᴏʀ ♛", f"https://t.me/MR_X_MIRROR")
         buttons.sbutton("ᴄʟᴏsᴇ", "status close")
         sbutton = buttons.build_menu(3)
         
@@ -384,14 +383,12 @@ def get_readable_message():
             buttons.sbutton(f"{PAGE_NO}/{PAGES}", str(THREE))
             buttons.sbutton("ɴᴇxᴛ ⇉", "status nex")
             buttons.sbutton("ʀᴇғʀᴇsʜ", "status refresh")
-            #buttons.buildbutton(f"♛ ᴄʀᴇᴀᴛᴏʀ ♛", f"https://t.me/MR_X_MIRROR")
             buttons.sbutton("ᴄʟᴏsᴇ", "status close")
         else:
             buttons.sbutton("⇇ ʙᴀᴄᴋ", "status pre")
             buttons.sbutton(f"{PAGE_NO}/{PAGES}", str(THREE))
             buttons.sbutton("ɴᴇxᴛ ⇉", "status nex")
             buttons.sbutton("ʀᴇғʀᴇsʜ", "status refresh")
-            #buttons.buildbutton(f"♛ ᴄʀᴇᴀᴛᴏʀ ♛", f"https://t.me/MR_X_MIRROR")
             buttons.sbutton("ᴄʟᴏsᴇ", "status close")
             return msg + bmsg, button
         return msg + bmsg, sbutton
@@ -699,18 +696,18 @@ def bot_sys_stats():
     mem = virtual_memory().percent
     disk = disk_usage("/").percent
     return f"""
-Made with ❤️ by {config_dict['CREDIT_NAME']}
+🥀 ᴍᴀᴅᴇ ᴡɪᴛʜ ʙʏ {config_dict['CREDIT_NAME']}
 
-Tasks Running: {tasks}
+ᴛᴀᴄᴋs ʀᴜɴɴɪɴɢ : {tasks}
 
-CPU: {progress_bar(cpu)} {cpu}%
-RAM: {progress_bar(mem)} {mem}%
-DISK: {progress_bar(disk)} {disk}%
+ᴄᴘᴜ : {progress_bar(cpu)} {cpu}%
+ʀᴀᴍ : {progress_bar(mem)} {mem}%
+ᴅɪsᴋ : {progress_bar(disk)} {disk}%
 
-SENT: {sent} | RECV: {recv}
+sᴇɴᴅ : {sent} | RECV: {recv}
 
-DLs: {num_active} | ULs: {num_upload} | SEEDING: {num_seeding}
-ZIP: {num_zip} | UNZIP: {num_unzip} | SPLIT: {num_split}
+ᴅʟs : {num_active} | ᴜʟs : {num_upload} | sᴇᴇᴅɪɴɢ: {num_seeding}
+ᴢɪᴘ : {num_zip} | ᴜɴᴢɪᴘ : {num_unzip} | sᴘʟɪᴛ: {num_split}
 """
 
 dispatcher.add_handler(CallbackQueryHandler(pop_up_stats, pattern="^" + str(THREE) + "$"))
