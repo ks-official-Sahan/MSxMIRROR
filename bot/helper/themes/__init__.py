@@ -3,7 +3,7 @@ from os import listdir
 from importlib import import_module
 from random import choice as rchoice
 from bot import config_dict, LOGGER
-from bot.helper.themes import wzml_minimal
+from bot.helper.themes import omgxbot
 
 AVL_THEMES = {}
 for theme in listdir('bot/helper/themes'):
@@ -24,6 +24,6 @@ def BotTheme(var_name, **format_vars):
         text = getattr(rantheme.WZMLStyle(), var_name, None)
         
     if text is None:
-        text = getattr(wzml_minimal.WZMLStyle(), var_name)
+        text = getattr(omgxbot.WZMLStyle(), var_name)
 
     return text.format_map(format_vars)
