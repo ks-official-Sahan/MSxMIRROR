@@ -63,10 +63,11 @@ def get_user_settings(from_user, key=None):
         update_user_ldata(user_id, 'ubot_pm', config_dict['BOT_PM'])
     uplan = "Paid User" if is_paid(user_id) else "Normal User"
     if key is None:
+        buttons.sbutton("sʜᴏʀᴛɴᴇʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} omg")
         buttons.sbutton("ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs", f"userset {user_id} universal")
         buttons.sbutton("ᴍɪʀʀᴏʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
         buttons.sbutton("ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
-        buttons.sbutton("sʜᴏʀᴛɴᴇʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} hari")
+        #buttons.sbutton("sʜᴏʀᴛɴᴇʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} hari")
         buttons.sbutton("✘ ᴄʟᴏsᴇ ✘", f"userset {user_id} close")
         text = "<b><u>🥀 ᴜsᴇʀ sᴇᴛᴛɪɴɢs 📌</u></b>"
         #text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=from_user.language_code, DC=from_user.dc_id)
@@ -183,7 +184,7 @@ def get_user_settings(from_user, key=None):
 <b>ᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ</b> : <code>{dailyup} / {dailytlup} per day</code>
 <b>ʀᴇᴍɴᴀᴍᴇ</b> : <code>{escape(remname)}</code>
 '''
-    elif key == 'hari':
+    elif key == 'omg':
         caption = user_dict['caption'] if user_dict and user_dict.get('caption') else "ɴᴏᴛ ᴇxɪsᴛs"
         cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "<code>ɴᴏᴛ ᴇxɪsᴛs</code>"
         ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "ɴᴏᴛ ᴇxɪsᴛs"
