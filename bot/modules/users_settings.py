@@ -474,7 +474,7 @@ def edit_user_settings(update, context):
         if DATABASE_URL: 
             DbManger().update_userval(user_id, 'cfont')
         query.answer(text="Caption Font Removed!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "font":
         query.answer()
         handler_dict[user_id] = False
@@ -500,7 +500,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Spoiler!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Italics":
         eVal = ["<i>Italics</i>", "i"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -508,7 +508,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Italics!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Code":
         eVal = ["<code>Monospace</code>", "code"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -516,7 +516,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Monospace!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Strike":
         eVal = ["<s>Strike</s>", "s"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -524,7 +524,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Strike!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Underline":
         eVal = ["<u>Underline</u>", "u"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -532,7 +532,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Underline!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Bold":
         eVal = ["<b>Bold</b>", "b"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -540,7 +540,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Bold!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "Regular":
         eVal = ["Regular", "r"]
         update_user_ldata(user_id, 'cfont', eVal)
@@ -548,7 +548,7 @@ def edit_user_settings(update, context):
             DbManger().update_userval(user_id, 'cfont', eVal)
             LOGGER.info(f"User : {user_id} Font Style Saved in DB")
         query.answer(text="Font Style changed to Regular!", show_alert=True)
-        update_user_settings(message, query.from_user, 'leech')
+        update_user_settings(message, query.from_user, 'hari')
     elif data[2] == "setulist":
         query.answer()
         handler_dict[user_id] = False
