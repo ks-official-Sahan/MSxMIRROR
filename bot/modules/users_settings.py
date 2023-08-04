@@ -183,6 +183,31 @@ def get_user_settings(from_user, key=None):
 <b>ᴅᴀɪʟʏ ᴜᴘʟᴏᴀᴅ</b> : <code>{dailyup} / {dailytlup} per day</code>
 <b>ʀᴇᴍɴᴀᴍᴇ</b> : <code>{escape(remname)}</code>
 '''
+    elif key == 'hari':
+        caption = user_dict['caption'] if user_dict and user_dict.get('caption') else "ɴᴏᴛ ᴇxɪsᴛs"
+        cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "<code>ɴᴏᴛ ᴇxɪsᴛs</code>"
+        ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "ɴᴏᴛ ᴇxɪsᴛs"
+        sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "ɴᴏᴛ ᴇxɪsᴛs"
+
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
+        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
+        buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
+        if cfont != "<code>ɴᴏᴛ ᴇxɪsᴛs</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")      
+
+        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
+        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
+        button = buttons.build_menu(2)
+        text = f'''<b><u>🥀 sʜᴏʀᴛɴᴇʀ sᴇᴛᴛɪɴɢs ғᴏʀ ✨<a href='tg://user?id={user_id}'>{name}</a></u></b>
+
+<b>sʜᴏʀᴛɴᴇʀ sɪᴛᴇ</b> : <code>{ssite}</code>
+<b>sʜᴏʀᴛɴᴇʀ ᴀᴘɪ</b> : <code>{sapi}</code>
+<b>ᴄᴀᴘᴛɪᴏɴ</b> : <code>{escape(caption)}</code>
+<b>ᴄᴀᴘ ғᴏɴᴛ</b> : <code>{cfont}</code>
+'''
     elif key == 'leech':
         prefix = user_dict['prefix'] if user_dict and user_dict.get('prefix') else "ɴᴏᴛ ᴇxɪsᴛs"
         suffix = user_dict['suffix'] if user_dict and user_dict.get('suffix') else "ɴᴏᴛ ᴇxɪsᴛs"
@@ -246,33 +271,7 @@ def get_user_settings(from_user, key=None):
         text += f"<b>ᴇxᴘɪʀʏ ᴅᴀᴛᴇ</b> : <code>{ex_date}</code>"
     elif key: text += f"<b>ᴜsᴇʀ ᴘʟᴀɴ</b> : <code>{uplan}</code>>"
     return text, button
-
-    elif key == 'hari':
-        caption = user_dict['caption'] if user_dict and user_dict.get('caption') else "ɴᴏᴛ ᴇxɪsᴛs"
-        cfont = user_dict['cfont'][0] if user_dict and user_dict.get('cfont') else "<code>ɴᴏᴛ ᴇxɪsᴛs</code>"
-        ssite = user_dict['ssite'] if user_dict and user_dict.get('ssite') else "ɴᴏᴛ ᴇxɪsᴛs"
-        sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "ɴᴏᴛ ᴇxɪsᴛs"
-
-        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
-        buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
-        if cfont != "<code>ɴᴏᴛ ᴇxɪsᴛs</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")      
-
-        buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
-        buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
-        button = buttons.build_menu(2)
-        text = f'''<b><u>🥀 sʜᴏʀᴛɴᴇʀ sᴇᴛᴛɪɴɢs ғᴏʀ ✨<a href='tg://user?id={user_id}'>{name}</a></u></b>
-
-<b>sʜᴏʀᴛɴᴇʀ sɪᴛᴇ</b> : <code>{ssite}</code>
-<b>sʜᴏʀᴛɴᴇʀ ᴀᴘɪ</b> : <code>{sapi}</code>
-<b>ᴄᴀᴘᴛɪᴏɴ</b> : <code>{escape(caption)}</code>
-<b>ᴄᴀᴘ ғᴏɴᴛ</b> : <code>{cfont}</code>
-'''
-
+    
 def update_user_settings(message, from_user, key):
     msg, button = get_user_settings(from_user, key)
     editMessage(msg, message, button)
