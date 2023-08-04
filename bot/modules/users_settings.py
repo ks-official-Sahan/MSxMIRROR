@@ -70,7 +70,7 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton("✘ ᴄʟᴏsᴇ ✘", f"userset {user_id} close")
         text = "<b><u>🥀 ᴜsᴇʀ sᴇᴛᴛɪɴɢs 📌</u></b>"
         #text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=from_user.language_code, DC=from_user.dc_id)
-        button = buttons.build_menu(1)
+        button = buttons.build_menu(2)
     elif key == 'universal':
         imdb = user_dict['imdb_temp'] if user_dict and user_dict.get('imdb_temp') else "Not Exists"
         anilist = user_dict['ani_temp'] if user_dict and user_dict.get('ani_temp') else "Not Exists"
