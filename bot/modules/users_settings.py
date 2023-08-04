@@ -190,12 +190,12 @@ def get_user_settings(from_user, key=None):
         sapi = user_dict['sapi'] if user_dict and user_dict.get('sapi') else "ɴᴏᴛ ᴇxɪsᴛs"
 
         buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-sɪᴛᴇ" if ssite != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-sɪᴛᴇ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal ssite hari")
         buttxt = "ᴄʜᴀɴɢᴇ ᴜʀʟ-ᴀᴘɪ" if sapi != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴜʀʟ-ᴀᴘɪ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi hari")
         buttxt = "ᴄʜᴀɴɢᴇ ᴄᴀᴘᴛɪᴏɴ" if caption != "ɴᴏᴛ ᴇxɪsᴛs" else "sᴇᴛ ᴄᴀᴘᴛɪᴏɴ"
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal caption leech")
-        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi leech")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal caption hari")
+        buttons.sbutton(buttxt, f"userset {user_id} suniversal sapi hari")
         if cfont != "<code>ɴᴏᴛ ᴇxɪsᴛs</code>": buttons.sbutton("ʀᴇᴍᴏᴠᴇ ᴄᴀᴘғᴏɴᴛ", f"userset {user_id} cfont")      
 
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
