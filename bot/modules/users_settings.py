@@ -324,7 +324,7 @@ def edit_user_settings(update, context):
     user_dict = user_data.get(user_id, False)
     if user_id != int(data[1]):
         query.answer(text="Not Yours!", show_alert=True)
-    elif data[2] in ['universal', 'leech', 'mirror']:
+    elif data[2] in ['universal', 'leech', 'mirror', 'hari']:
         query.answer()
         update_user_settings(message, query.from_user, data[2])
     elif data[2] == 'mback':
