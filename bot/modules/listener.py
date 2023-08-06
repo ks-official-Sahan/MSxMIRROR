@@ -601,7 +601,7 @@ class MirrorLeechListener:
                 bmsg = f"<b>📂 ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
             else:
                 bmsg = f"<b>📂 ɴᴀᴍᴇ : </b><{config_dict['NAME_FONT']}>{escape(name)}</{config_dict['NAME_FONT']}>\n"
-            botpm = f"<b>\n👋 ʜᴇʏ {self.tag}!, ɪ ʜᴀᴠᴇ sᴇɴᴅ ʏᴏᴜʀ sᴛᴜғғ ɪɴ ᴘᴍ.\n\n🌿ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href=https://t.me/Hari_OP>ʜᴀʀɪ ᠰ ᴛɢ​</a> </b>"
+            botpm = f"<b>\n👋 ʜᴇʏ {self.tag}!, ɪ ʜᴀᴠᴇ sᴇɴᴅ ʏᴏᴜʀ sᴛᴜғғ ɪɴ ᴘᴍ.</b>\n"
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
             botstart = f"http://t.me/{b_uname}"
