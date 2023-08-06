@@ -255,8 +255,8 @@ def get_readable_message():
             msg += f"<b>✓ ғɪʟᴇ ɴᴀᴍᴇ</b> : <code>{escape(str(download.name()))}</code>\n"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_CONVERTING, MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
                 if config_dict['EMOJI_THEME']:
-                    msg += f"\n<b>» {get_progress_bar_string(download)} {download.progress()}</b>"
-                    msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
+                    msg += f"\n<b>» <a href='{download.message.link}'>{get_progress_bar_string(download)} {download.progress()}</b>"
+                    msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b>{download.status()}</a></b>"
                     msg += f"\n<b>» ᴅᴏɴᴇ :</b> <code>{get_readable_file_size(download.processed_bytes())} of {download.size()}</code>"
                     msg += f"\n<b>» sᴘᴇᴇᴅ :</b> <code>{download.speed()}</code>"
                     msg += f"\n<b>» ᴇᴛᴀ :</b> <code>{download.eta()}</code>"
@@ -264,8 +264,8 @@ def get_readable_message():
                     msg += f"\n<b>» ᴇɴɢɪɴᴇ :</b> <code>{download.eng()}</code>"
                     
                 else:
-                    msg += f"\n<b>» {get_progress_bar_string(download)} {download.progress()}</b>"
-                    msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b><a href='{download.message.link}'>{download.status()}</a></b>"
+                    msg += f"\n<b>» <a href='{download.message.link}'>{get_progress_bar_string(download)} {download.progress()}</b>"
+                    msg += f"\n<b>» sᴛᴀᴛᴜs</b> : <b>{download.status()}</a></b>"
                     msg += f"\n<b>» ᴅᴏɴᴇ :</b> <code>{get_readable_file_size(download.processed_bytes())} of {download.size()}</code>"
                     msg += f"\n<b>» sᴘᴇᴇᴅ :</b> <code>{download.speed()}</code>"
                     msg += f"\n<b>» ᴇᴛᴀ :</b> <code>{download.eta()}</code>"
