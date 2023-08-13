@@ -26,7 +26,7 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror_leech
                      delete, count, users_settings, search, rss, wayback, speedtest, anilist, imdb, bt_select, mediainfo, hash, \
                      scraper, pictures, save_msg, sel_cat, broadcast, drive_clean, users
 
-version = "MRxMIRROR(5.1)"
+version = "MSXCLOUD(5.1)"
 
 def progress_bar(percentage):
     p_used = config_dict['FINISHED_PROGRESS_STR']
@@ -206,7 +206,7 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://t.me/MR_X_MIRROR'>MR-X-MIRROR</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
+<b><a href='https://t.me/MS_NEWONN'>MS</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
 Choose a help category:
 '''
 
