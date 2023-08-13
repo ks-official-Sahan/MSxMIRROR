@@ -29,16 +29,16 @@ default_values = {'AUTO_DELETE_MESSAGE_DURATION': 30,
                   'DOWNLOAD_DIR': '/usr/src/app/downloads/',
                   'TIME_GAP': -1,
                   'TG_SPLIT_SIZE': tgBotMaxFileSize,
-                  'TGH_THUMB': 'https://telegra.ph/file/891300c0a480330cf8840.png',
+                  'TGH_THUMB': '',
                   'START_BTN1_NAME': '♛ ᴍᴀsᴛᴇʀ ♛',
-                  'START_BTN1_URL': 'https://t.me/Sheik_TG',
+                  'START_BTN1_URL': 'https://t.me/MS_NEWONN',
                   'START_BTN2_NAME': '♚ ᴄʀᴇᴀᴛᴏʀ ♚',
-                  'START_BTN2_URL': 'https://t.me/MR_X_MIRROR',
-                  'AUTHOR_NAME': 'MR X MIRROR',
-                  'AUTHOR_URL': 'https://t.me/MR_X_MIRROR',
-                  'TITLE_NAME': 'SHEIK X CLOUD',
-                  'GD_INFO': 'Uploaded by @MR_X_MIRROR',
-                  'CREDIT_NAME': '@MR_X_MIRROR',
+                  'START_BTN2_URL': 'https://t.me/MS_NEWONN',
+                  'AUTHOR_NAME': 'MS',
+                  'AUTHOR_URL': 'https://t.me/MS_NEWONN',
+                  'TITLE_NAME': 'MS X CLOUD',
+                  'GD_INFO': 'Uploaded by @MSXCloud',
+                  'CREDIT_NAME': '@MSXCloud',
                   'NAME_FONT': 'b',
                   'CAPTION_FONT': 'b',
                   'FINISHED_PROGRESS_STR': '★',
@@ -120,7 +120,7 @@ def load_config():
 
     TGH_THUMB = environ.get('TGH_THUMB', '')
     if len(TGH_THUMB) == 0:
-        TGH_THUMB = 'https://telegra.ph/file/891300c0a480330cf8840.png'
+        TGH_THUMB = 'https://te.legra.ph/file/4e4580fabb0752636104d.jpg'
 
     SA_MAIL = environ.get('SA_MAIL', '')
     if len(SA_MAIL) == 0:
@@ -485,13 +485,13 @@ def load_config():
     START_BTN1_URL = environ.get('START_BTN1_URL', '')
     if len(START_BTN1_NAME) == 0 or len(START_BTN1_URL) == 0:   
         START_BTN1_NAME = '♛ ᴍᴀsᴛᴇʀ ♛'
-        START_BTN1_URL = 'https://t.me/Sheik_TG'
+        START_BTN1_URL = 'https://t.me/MS_NEWONN'
 
     START_BTN2_NAME = environ.get('START_BTN2_NAME', '')
     START_BTN2_URL = environ.get('START_BTN2_URL', '')
     if len(START_BTN2_NAME) == 0 or len(START_BTN2_URL) == 0:   
         START_BTN2_NAME = '♚ ᴄʀᴇᴀᴛᴏʀ ♚'
-        START_BTN2_URL = 'https://t.me/MR_X_MIRROR'
+        START_BTN2_URL = 'https://t.me/MS_NEWONN'
 
     BUTTON_FOUR_NAME = environ.get('BUTTON_FOUR_NAME', '')
     BUTTON_FOUR_URL = environ.get('BUTTON_FOUR_URL', '')
@@ -565,23 +565,23 @@ def load_config():
 
     AUTHOR_NAME = environ.get('AUTHOR_NAME', '')
     if len(AUTHOR_NAME) == 0:   
-        AUTHOR_NAME = 'MR X MIRROR'
+        AUTHOR_NAME = 'MS'
 
     AUTHOR_URL = environ.get('AUTHOR_URL', '')
     if len(AUTHOR_URL) == 0:    
-        AUTHOR_URL = 'https://t.me/MR_X_MIRROR'
+        AUTHOR_URL = 'https://t.me/MS_NEWONN'
 
     TITLE_NAME = environ.get('TITLE_NAME', '')
     if len(TITLE_NAME) == 0:    
-        TITLE_NAME = 'SHEIK X CLOUD'
+        TITLE_NAME = 'MS X CLOUD'
 
     GD_INFO = environ.get('GD_INFO', '')
     if len(GD_INFO) == 0:   
-        GD_INFO = 'Uploaded by @MR_X_MIRROR'
+        GD_INFO = 'Uploaded by @MSCloud'
 
     CREDIT_NAME = environ.get('CREDIT_NAME', '')
     if len(CREDIT_NAME) == 0:   
-        CREDIT_NAME = '@MR_X_MIRROR'
+        CREDIT_NAME = '@MSXCloud'
 
     NAME_FONT = environ.get('NAME_FONT', '')
     if len(NAME_FONT) == 0: 
