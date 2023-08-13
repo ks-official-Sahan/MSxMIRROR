@@ -115,7 +115,7 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         button = buttons.build_menu(2)
-        text = f'''<u>🥀 ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs ғᴏʀ 📌<a href='tg://user?id={user_id}'>{name}</a></u>
+        text = f'''<u>🥀 ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs ғᴏʀ ⚙️<a href='tg://user?id={user_id}'>{name}</a></u>
 
 <b>ʏᴛ-ᴅʟᴘ ǫᴜᴀʟɪᴛʏ</b> : <code>{escape(ytq)}</code>
 <b>ᴅᴀɪʟʏ ᴛᴀsᴋs</b> : <code>{dailytas} / {dailytl} per day</code>
@@ -252,7 +252,7 @@ def get_user_settings(from_user, key=None):
         buttons.sbutton("ʙᴀᴄᴋ", f"userset {user_id} mback", 'footer')
         buttons.sbutton("ᴄʟᴏsᴇ", f"userset {user_id} close", 'footer')
         button = buttons.build_menu(2)
-        text = f'''<b><u>🥀 ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs ғᴏʀ ✨<a href='tg://user?id={user_id}'>{name}</a></u></b>
+        text = f'''<b><u>🥀 ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs ғᴏʀ ⚙️<a href='tg://user?id={user_id}'>{name}</a></u></b>
 
 <b>ʟᴇᴇᴄʜ ᴛʏᴘᴇ</b> : <code>{ltype}</code>
 <b>ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ</b> : <code>{thumbmsg}</code>
