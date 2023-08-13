@@ -102,7 +102,7 @@ def clist(update, context):
         extras = f'''╭ <b>Query :</b> <i>{exdata[0]}</i>
 ├ <b>Total Results :</b> <i>{exdata[1]}</i>
 ├ <b>Type :</b> <i>{exdata[2].capitalize()}</i>
-╰ <b>CC :</b> <a href='tg://user?id={user_id}'>{bot.get_chat(user_id).first_name}</a>\n\n<b>═════〣 SHEIK X CLOUD 〣═════</b>\n\n'''
+╰ <b>CC :</b> <a href='tg://user?id={user_id}'>{bot.get_chat(user_id).first_name}</a>\n\n<b>═════〣 MS X CLOUD 〣═════</b>\n\n'''
         editMessage(extras+udata[ind], query.message, buttons.build_menu(3))
     elif data[2] == "pagnav":
         query.answer()
